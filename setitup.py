@@ -13,4 +13,11 @@ system("cp /tmp/bashtodev/tools/* $HOME/.bashtodev/;\
         chmod 755 *
        ")
        
+bashrcfile=environ("HOME")+"/.bashrc"
+bashrccontent=None
+with open(bashrcfile,"r") as f:
+       bashrccontent=f.read()
+with open(bashrcfile,"w") as f:
+       f.write(bashrccontent+"\nsource $HOME/.bashtodev/.mybashrc")
+       
 system("rm -rf /tmp/bashtodev/")
