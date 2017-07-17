@@ -2,6 +2,7 @@
 # coding:utf8
 
 from os import environ, system
+from platform import system as pSystem
 
 system("cd /tmp/;\
         git clone https://github.com/tnkteja/bashtodev;cd bashtodev;\
@@ -12,7 +13,10 @@ system("cp /tmp/bashtodev/tools/* $HOME/.bashtodev/;\
         cd $HOME/.bashtodev/;\
         chmod 755 *
        ")
-       
+platform=pSystem()
+if platform == "Darwin":
+       system(" cd $HOME;\
+                if ! [-f ~/.bash_profile]; then cat 'if [ -f ~/.bashrc ]; then . ~/.bashrc; fi' > .bash_profile ; fi'
 bashrcfile=environ("HOME")+"/.bashrc"
 bashrccontent=None
 with open(bashrcfile,"r") as f:
