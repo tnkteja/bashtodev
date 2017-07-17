@@ -1,2 +1,4 @@
 
 export PATH=$PATH:$HOME/.bashtodev/
+
+PS1='[\u@\h \W] \D{%F %T}\n\$ '
